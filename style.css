@@ -1,0 +1,186 @@
+:root {
+  --nw-green: #85c446;
+  --nw-green-dark: #6ea634;
+  --nw-green-soft: #f3faea;
+  --bg: #f5f5f5;
+  --surface: #ffffff;
+  --text: #222222;
+  --muted: rgba(0, 0, 0, 0.65);
+  --border: #e7e3d9;
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --radius-lg: 18px;
+  --max: 1400px;
+  --font: "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 1.75rem 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-logo {
+  width: min(420px, 82vw);
+  height: auto;
+}
+
+.portal-search {
+  width: min(700px, 92vw);
+  padding: 0.95rem 1.25rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 999px;
+  font-size: 1rem;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.14);
+}
+
+.portal-search:focus {
+  outline: none;
+  border-color: var(--nw-green);
+  box-shadow: 0 0 0 4px rgba(133, 196, 70, 0.16);
+}
+
+.hero-banner {
+  background: linear-gradient(135deg, var(--nw-green-dark), var(--nw-green));
+  color: #ffffff;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.hero-banner h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.3rem);
+  line-height: 1;
+}
+
+.hero-banner p {
+  max-width: 720px;
+  margin: 0.9rem auto 0;
+  font-size: 1rem;
+}
+
+.pricing-note {
+  font-weight: 700;
+  opacity: 0.95;
+}
+
+.catalog-shell {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2rem 20px 3rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 1.15rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  transition: 0.2s ease;
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #f3f3f3;
+  border-radius: 16px;
+  padding: 0.75rem;
+  border: 1px solid #ececec;
+}
+
+.product-content h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.product-content p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0.65rem 0;
+}
+
+.product-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.product-content li {
+  background: var(--nw-green-soft);
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  font-size: 0.92rem;
+}
+
+.smartsheet-embed {
+  display: block;
+  width: 100%;
+  height: 520px;
+  border: 1px solid #e3e3e3;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.site-footer {
+  background: #111111;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-banner {
+    padding: 2rem 1rem;
+  }
+
+  .product-card {
+    padding: 1rem;
+  }
+
+  .smartsheet-embed {
+    height: 640px;
+  }
+}
